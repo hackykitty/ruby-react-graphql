@@ -1,0 +1,12 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  url: <%= ENV.fetch('DATABASE_URL', '') + '_development' %>
+
+test:
+  <<: *default
+  url: <%= ENV.fetch('DATABASE_URL', '') + '_test' %>

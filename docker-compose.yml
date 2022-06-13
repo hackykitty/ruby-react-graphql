@@ -1,0 +1,11 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:13.4-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - /var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: kitty
+      POSTGRES_PASSWORD: kitty
